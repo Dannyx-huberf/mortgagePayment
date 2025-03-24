@@ -34,7 +34,6 @@ p{
 }
 .calculate-container{
   background-color: hsl(0, 0%, 100%);
-  border: 2px solid indigo;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 1rem 2rem;
