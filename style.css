@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "Jarkata";
+  src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: hsl(202, 86%, 94%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Jarkata";
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+.attribution{
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container{
+  width: 80%;
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.calculate-container{
+  background-color: hsl(0, 0%, 100%);
+  border: 2px solid indigo;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 1rem 2rem;
+  width: 50%;
+}
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calculator-title{
+ font-family: "Jarkata";
+ font-size: 2rem;
+ font-weight: 900;
+}
+.clear-link{
+  text-decoration: underline;
+  font-size: 1.5rem;
+  color: hsl(203, 41%, 72%);
+  cursor: pointer;
+}
+.clear-link:hover{
+  color: hsl(203, 41%, 42%);
+}
+.calculator-form{
+  margin-top: 1.5rem;
+}
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: none; /* Hide by default */
+}
+
+.calculator-form label{
+  display: block;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.amount-container, .terms-container, .rate-container {
+  position: relative;
+}
+.amount-container {
+  width: 100%;
+}
+
+.amount-container::before {
+  content: "£";
+  position: absolute;
+  top: 50%;
+  left: 0px; /* Add small spacing */
+  transform: translateY(-50%);
+  padding: 0.5rem 15px;
+  background-color: hsl(202, 86%, 94%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid black;
+}
+
+.amount {
+  width: 100%; /* Ensures it fills the container */
+  border: 1px solid hsl(200, 26%, 54%);
+  border-radius: 10px;
+  /* height: 2.5rem; */
+  font-size: 1.5rem;
+  padding: 0.7rem 1rem 0.7rem 3rem; /* Adjust left padding for "£" */
+  box-sizing: border-box; /* Ensures padding doesn't exceed width */
+}
+
+.terms-conditions{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.terms-compile{
+  width: 45%;
+}
+.terms-container::after{
+  content: "years";
+  position: absolute;
+  right: 0;
+  top: 1%;
+  padding: 10px 11px;
+  background-color: hsl(202, 86%, 94%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid black;
+}
+.rate-container::after{
+  content: "%";
+  position: absolute;
+  right: 0;
+  top: 1%;
+  padding: 10px 12px;
+  background-color: hsl(202, 86%, 94%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid black;
+}
+#terms{
+  font-size: 1.5rem;
+  width: 100%;
+  padding: .7rem .2rem;
+  border: 1px solid hsl(200, 26%, 54%);
+  border-radius: 10px;
+}
+#rate{
+  font-size: 1.5rem;
+  width: 100%;
+  padding: .7rem .2rem;
+  border: 1px solid hsl(200, 26%, 54%);
+  border-radius: 10px;
+}
+.mortgage-type h2{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.repayment,.intrest{
+  display: flex;
+  border: 1px solid hsl(200, 26%, 54%);
+  margin-bottom: 10px;
+}
+#repayment-btn,#intrest-btn{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 20px;
+}
+.repayment,.intrest p{
+  font-size: 1.3rem;
+  font-weight: bolder;
+  padding: 1rem 0;
+}
+.calculator-button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-self: center;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: hsl(61, 70%, 52%);
+  width: 80%;
+  cursor: pointer;
+}
+.calculator-button img{
+  width: 15%;
+}
+.calculator-button p{
+  font-weight: bolder;
+  font-size: 1.3rem;
+  width: 80%;
+}
+.calculator-button:hover{
+  background-color: hsl(61, 70%, 72%);
+}
+.result-container{
+  background-color: hsl(202, 55%, 16%);
+  color:hsl(0, 0%, 100%) ;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 40px;
+  padding: 1rem 1rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result-container p{
+  text-align: center;
+}
+.result-heading{
+  padding: 0 1rem;
+}
+.calculated-result-title{
+  font-size: 1.5rem;
+  margin-top: 0;
+  text-align: left;
+}
+.result-heading p{
+  text-align: left;
+}
+
+.output-container {
+  background-color: hsl(201, 87%, 9%);
+  border-top: hsl(61, 70%, 52%) 5px solid;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 2rem; /* Equal padding on all sides */
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  color: white; /* Text color for better contrast */
+}
+
+/* Optional: Style the child elements for better spacing */
+.output-container p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 85%);
+  text-align: left;
+}
+.monthly-payment{
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: hsl(61, 70%, 72%); /* Brighter version of your border color */
+}
+.output-container hr {
+  border: none;
+  height: 1px;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  margin: 1.5rem 0;
+}
+.total-payment{
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+@media (max-width:46.9rem){
+  body{
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  .container{
+   flex-direction: column;
+   margin: auto;
+   border-radius: 0;
+  } 
+  .calculate-container{
+    width: 100%;
+    border: none;
+    margin: auto;
+  }
+  .result-container{
+    width: 100%;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .heading{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .calculator-title{
+    margin-bottom: .6rem;
+  }
+  .clear-link{
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .calculator-form{
+    margin-right: 10px;
+  }
+  .calculator-form label{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: hsl(200, 26%, 54%);
+  }
+  .amount{
+    width: 100%;
+  }
+  .terms-conditions{
+    flex-direction: column;
+  }
+  .terms-compile{
+    width: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .mortgage-type h2{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: hsl(200, 26%, 54%);
+  }
+  .calculator-button{
+    width: 100%;
+  }
+  .result-container h2{
+    margin-top: 2rem;
+  }
+ }
+@media (max-width:62.4rem){
+  .container{
+    width: auto;
+  }
+  .calculator-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .clear-link{
+    font-size: 1rem;
+  }
+  .terms-compile label{
+    font-size: 1.2rem;
+  }
+}
+
